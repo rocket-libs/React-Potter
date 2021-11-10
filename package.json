@@ -1,0 +1,89 @@
+{
+  "author": "Nyingi Maina",
+  "name": "react-potter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rocket-libs/React-Potter"
+  },
+  "description": "Easily integrate Potter Nano Framework into your ReactJS app",
+  "version": "1.0.5",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "jsnext:main": "build/index.es.js",
+  "keywords": [
+    "react",
+    "ui",
+    "component",
+    "state management"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "storybook": "start-storybook",
+    "test": "jest --coverage",
+    "dev": "yarn build && yarn upgrade rocket-libs-react-potter --latest & next"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-url": "^6.1.0",
+    "@storybook/react": "^6.3.12",
+    "@svgr/rollup": "^5.1.0",
+    "@testing-library/jest-dom": "^5.1.0",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.7",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "jest": "^27.3.1",
+    "next": "^12.0.3",
+    "np": "^7.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-typescript-rollup-npm": "^2.0.0",
+    "rollup": "^2.59.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.2",
+    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4"
+  },
+  "peerDependencies": {
+    "react": "^16",
+    "react-dom": "^16"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
+    "testPathIgnorePatterns": [
+      "build/"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.test.json"
+      }
+    }
+  },
+  "standard": {
+    "ignore": [
+      "node_modules/",
+      "build/"
+    ],
+    "globals": [
+      "describe",
+      "it",
+      "test",
+      "expect",
+      "afterAll",
+      "jest"
+    ]
+  }
+}
