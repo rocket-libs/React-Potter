@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "module": "esnext",
     "declaration": false,
     "moduleResolution": "node",
@@ -10,7 +10,14 @@
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
     "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext", "es6", "es2016", "es2017"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "es6",
+      "es2016",
+      "es2017"
+    ],
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowJs": true,
@@ -23,9 +30,12 @@
     "forceConsistentCasingInFileNames": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "incremental": true
   },
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   "exclude": [
     "src/components/__tests__",
     "src/components/**/*.stories.*",
