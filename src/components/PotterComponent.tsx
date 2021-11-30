@@ -15,14 +15,6 @@ export default abstract class PotterComponent<
   public model: TModel;
   public logic: TLogic;
   public potter: AdhocPotter<TRepository, TModel, TLogic>;
-  /*private get pottery(): Pottery<
-    TRepository,
-    TModel,
-    TLogic,
-    AdhocPotter<TRepository, TModel, TLogic>
-  > {
-    return new Pottery(this.potter);
-  }*/
 
   constructor(repository: TRepository, model: TModel, logic: TLogic) {
     super((undefined as unknown) as TProps);
@@ -35,7 +27,9 @@ export default abstract class PotterComponent<
 
   protected abstract onRender(): ReactElement;
 
-  protected abstract onStartedAsync(): Promise<void>;
+  protected onStartedAsync(): Promise<void> {
+    return Promise.resolve();
+  }
 
   protected getChildKeyFromObject(obj: any): string {
     return JSON.stringify(obj);
