@@ -1,5 +1,6 @@
 import { PotterState } from "potter-nf";
 import React, { ReactElement } from "react";
+import { getAdhocPotter } from "..";
 import AdhocPotter from "./AdhocPotter";
 import PotterRepositoryBase from "./PotterRepositoryBase";
 import PotterUiBinder from "./PotterUiBinder";
@@ -22,7 +23,7 @@ export default abstract class PotterComponent<
     this.model = model;
     this.logic = logic;
 
-    this.potter = new AdhocPotter(repository, model, logic);
+    this.potter = getAdhocPotter(repository, model, () => logic);
   }
 
   protected abstract onRender(): ReactElement;
@@ -37,7 +38,7 @@ export default abstract class PotterComponent<
   protected getChildKey(dependancies: any[]): string {
     let key = "";
     for (const specificDependancy of dependancies) {
-      key += specificDependancy;
+      key += JSON.stringify(specificDependancy);
     }
     return key;
   }
