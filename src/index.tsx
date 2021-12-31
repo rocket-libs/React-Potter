@@ -1,10 +1,9 @@
 import PotterComponent from "./components/PotterComponent";
 import { getAdhocPotter } from "./components/AdhocPotter";
-import PotterChildComponent, {
-  IPotterChildComponentProps,
-} from "./components/PotterChildComponent";
+import PotterChildComponent from "./components/PotterChildComponent";
 import PotterLogicBase from "./components/PotterLogicBase";
 import PotterRepositoryBase from "./components/PotterRepositoryBase";
+import IPotterChildComponentProps from "./components/IPotterChildComponentProps";
 
 export {
   PotterComponent,

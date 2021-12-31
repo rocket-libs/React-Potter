@@ -1,17 +1,12 @@
 import { PotterState } from "potter-nf";
 import React, { ReactElement } from "react";
 import AdhocPotter from "./AdhocPotter";
+import IPotterChildComponentProps from "./IPotterChildComponentProps";
 import PotterRepositoryBase from "./PotterRepositoryBase";
 import PotterUiBinder from "./PotterUiBinder";
 import Pottery from "./Pottery";
 
-export interface IPotterChildComponentProps<
-  TRepository extends PotterRepositoryBase,
-  TModel,
-  TLogic extends PotterState<TRepository, TModel>
-> {
-  potter: AdhocPotter<TRepository, TModel, TLogic>;
-}
+
 export default abstract class PotterChildComponent<
   TRepository extends PotterRepositoryBase,
   TModel,

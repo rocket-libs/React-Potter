@@ -1,0 +1,15 @@
+{
+    "Label": "React Potter",    
+    "BuildCommands":[
+        "rm -r -f ./build",
+        "yarn install",
+        "yarn build",
+        "npm publish"
+    ],
+    "DisabledStages":[
+        "PublishToRepository",
+        "CopyToStagingDirectory"
+    ],
+    "BuildOutputDirectory":"./build",
+    "PublishUrl":""
+}

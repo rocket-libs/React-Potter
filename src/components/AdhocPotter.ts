@@ -9,7 +9,7 @@ export default class AdhocPotter<
 function getAdhocPotter<
   TRepository,
   TModel,
-  TLogic extends PotterState<TRepository, TModel>
+  TLogic extends PotterState<TRepository, TModel>,
 >(
   repository: TRepository,
   model: TModel,
@@ -17,7 +17,7 @@ function getAdhocPotter<
 ): AdhocPotter<TRepository, TModel, TLogic> {
   const logic = newLogic();
   const adhocPotter = new AdhocPotter(repository, model, logic);
-  logic.potter = adhocPotter;
+  logic.setPotter(adhocPotter);
 
   return adhocPotter;
 }

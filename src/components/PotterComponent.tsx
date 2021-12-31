@@ -1,6 +1,6 @@
 import { PotterState } from "potter-nf";
 import React, { ReactElement } from "react";
-import { getAdhocPotter } from "..";
+import { getAdhocPotter } from "./AdhocPotter";
 import AdhocPotter from "./AdhocPotter";
 import PotterRepositoryBase from "./PotterRepositoryBase";
 import PotterUiBinder from "./PotterUiBinder";
@@ -56,11 +56,9 @@ export default abstract class PotterComponent<
       <PotterUiBinder
         loadingDisplayLabel={""}
         currentPotter={this.potter}
-        newPotter={new AdhocPotter(this.repository, this.model, this.logic)}
-        onStarted={async (p: AdhocPotter<TRepository, TModel, TLogic>) => {
-          this.potter = p;
-          this.logic.potter = p;
-          this.logic.context = p.context;
+        newPotter={this.potter}
+        onStarted={async (_: AdhocPotter<TRepository, TModel, TLogic>) => {
+          this.logic.initialize(this.potter.context,this.potter);
           await this.onStartedAsync();
         }}
         onRender={() => {
