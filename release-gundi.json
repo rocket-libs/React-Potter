@@ -1,15 +1,20 @@
 {
-    "Label": "React Potter",    
-    "BuildCommands":[
-        "rm -r -f ./build",
-        "yarn install",
-        "yarn build",
-        "npm publish"
-    ],
-    "DisabledStages":[
-        "PublishToRepository",
-        "CopyToStagingDirectory"
-    ],
-    "BuildOutputDirectory":"./build",
-    "PublishUrl":""
+  "Branch": null,
+  "BuildCommands": [
+    "rm -r -f ./build",
+    "yarn install",
+    "yarn build",
+    "npm publish"
+  ],
+  "BuildOutputDirectory": "./build",
+  "DisabledStages": [
+    "CopyToStagingDirectory",
+    "PublishToRepository"
+  ],
+  "Id": "00000000-0000-0000-0000-000000000000",
+  "KeepSource": true,
+  "Label": "React Potter",
+  "OnFailurePostBuildCommands": null,
+  "OnSuccessPostBuildCommands": null,
+  "PublishUrl": ""
 }
